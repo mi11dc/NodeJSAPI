@@ -3,7 +3,7 @@ node_modules/
 
 # Environment files to run this project
 .env
-*.json
+*firebase*.json
 
 # Server images where it uploads 
 public/images/
