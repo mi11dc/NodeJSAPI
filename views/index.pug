@@ -1,0 +1,29 @@
+extends layout 
+
+
+block main-content 
+  -
+    //You can overwrite the main-content block by writing block content
+    //in the template file which is extending.
+
+  div.container-fluid
+    div
+      h1.page-title Please upload your photo with clear Face
+      
+      div
+        form(action='/uploadImage' method='POST' enctype='multipart/form-data')
+          input.form-control.form-control-lg(type="file", id="file" name="file", accept="image/*")
+          br
+          input.btn.btn-primary(type='submit', name='upload_btn', value='Upload') 
+      
+      hr
+
+      div.photos
+        div.row
+          each photo in photos
+            div.col-md-3.col-sm-6.col-lg-4.py-2
+              div.card
+                img(src=`${photo.b64String}` width=300 height=300)
+                .card-body
+                  h5.card-title= `${photo.faceInfo.age}`
+                  p.card-text= `${photo.faceInfo.gender}`

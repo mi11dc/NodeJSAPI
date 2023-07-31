@@ -1,0 +1,10 @@
+# Node files
+node_modules/
+package-lock.json
+
+# Environment files to run this project
+.env
+*.json
+
+# Server images where it uploads 
+public/images/
